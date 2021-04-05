@@ -1,0 +1,65 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Update";
+}
+
+@model midterm2.Models.Movie
+
+<form asp-action="Update" method="post">
+    <div>
+        <label asp-for="Title">Title</label>
+        <input asp-for="Title" />
+    </div>
+
+    <div>
+        <label asp-for="Year">Year</label>
+        <input asp-for="Year" />
+    </div>
+
+    <div>
+        <label asp-for="Category">Category</label>
+        <input asp-for="Category" />
+    </div>
+
+    <div>
+        <label asp-for="Director">Director</label>
+        <input asp-for="Director" />
+    </div>
+
+    <div>
+        <label asp-for="Rating">Rating</label>
+        <select asp-for="Rating">
+            <option value="g">G</option>
+            <option value="pg">PG</option>
+            <option value="pg13">PG-13</option>
+            <option value="r">R</option>
+        </select>
+    </div>
+
+    <div>
+        <label asp-for="Edited">Edited</label>
+        <select asp-for="Edited">
+            <option value="">Choose one</option>
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+        </select>
+    </div>
+
+    <div>
+        <label asp-for="LentTo">Lent To?</label>
+        <input asp-for="LentTo" />
+    </div>
+
+    <div>
+        <label asp-for="Notes">Notes</label>
+        <input asp-for="Notes" maxlength="25" />
+    </div>
+
+    <div asp-validation-summary="All"></div>
+
+    <input type="hidden" name="movieId" value="@Model.MovieId" />
+
+    <button type="submit">Update movie</button>
+</form>

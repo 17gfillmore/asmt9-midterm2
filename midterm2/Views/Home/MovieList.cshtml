@@ -20,23 +20,32 @@
                 <th>Edited</th>
                 <th>Lent To</th>
                 <th>Notes</th>
-
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var x in Model)
-            {
-                <tr>
-                    <th>@x.Title</th>
-                    <th>@x.Year</th>
-                    <th>@x.Director</th>
-                    <th>@x.Category</th>
-                    <th>@x.Rating</th>
-                    <th>@x.Edited</th>
-                    <th>@x.LentTo</th>
-                    <th>@x.Notes</th>
-                </tr>
-            }
+           @foreach (var x in Model)
+           {
+            <tr>
+                <td>@x.Title</td>
+                <td>@x.Year</td>
+                <td>@x.Director</td>
+                <td>@x.Category</td>
+                <td>@x.Rating</td>
+                <td>@x.Edited</td>
+                <td>@x.LentTo</td>
+                <td>@x.Notes</td>
+                <td>
+                    <a asp-action="Update" asp-route-movieId="@x.MovieId">Update</a>
+                </td>
+                <td>
+                    <form asp-action="Delete" method="post">
+                        <input type="hidden" name="movieId" value="@x.MovieId" />
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+           }
         </tbody>
     </table>
 </div>

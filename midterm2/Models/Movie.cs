@@ -6,6 +6,7 @@ namespace midterm2.Models
     public class Movie
     {
         [Key]
+        [Required]
         public int MovieId { get; set; }
 
         [Required]
