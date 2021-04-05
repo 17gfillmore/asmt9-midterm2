@@ -1,0 +1,44 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "All movies";
+}
+
+@model IEnumerable<Movie>
+
+<div>
+    <h2>Here are the movies you've stored so far:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Year</th>
+                <th>Director</th>
+                <th>Category</th>
+                <th>Rating</th>
+                <th>Edited</th>
+                <th>Lent To</th>
+                <th>Notes</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <th>@x.Title</th>
+                    <th>@x.Year</th>
+                    <th>@x.Director</th>
+                    <th>@x.Category</th>
+                    <th>@x.Rating</th>
+                    <th>@x.Edited</th>
+                    <th>@x.LentTo</th>
+                    <th>@x.Notes</th>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+    
