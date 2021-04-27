@@ -35,13 +35,24 @@
         </nav>
     </header>
 
+    <div class="container">
+        <div class="row">
 
-    <h1>@ViewBag.Title</h1>
+            <div class="col-3">
+                <h4>@ViewBag.Title</h4>
+            </div>
 
-    @RenderBody()
+            <div class="col-9">
+                @RenderBody()
+            </div>
+
+        </div>
+    </div>
+    
+    
 
     <br />
     <br />
-    <footer> shared layout footer, Copyright 2021</footer>
+    <footer class="col-6"> shared layout footer, Copyright 2021</footer>
 </body>
 </html>
